@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cinematic Cuisine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts (Corrected to Cinzel and Lato) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        🎬 Cinematic Cuisine
+      </a>
+    </div>
+  </nav>
+
+  <div class="container py-4">
+    <!-- Recipe of the Day -->
+    <div id="recipe-of-the-day" class="mb-5"></div>
+
+    <!-- Pantry Pal -->
+    <div id="pantry-pal" class="mb-5">
+      <div class="pantry-header">
+        <h2>My Pantry</h2>
+        <p>Add your ingredients and see what cinematic dish you can create!</p>
+      </div>
+      <form id="pantry-form" class="d-flex mb-3">
+        <input type="text" id="pantry-input" class="form-control me-2" placeholder="e.g., Flour, Sugar...">
+        <button type="submit" class="btn btn-primary">Add</button>
+      </form>
+      <div id="pantry-list"></div>
+    </div>
+
+    <!-- Filter Controls -->
+    <div class="filter-controls p-3 rounded-3 mb-4">
+      <div class="row g-2 align-items-center">
+        <div class="col-md-3">
+          <select id="category-filter" class="form-select">
+            <option value="">All Genres</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <select id="difficulty-filter" class="form-select">
+            <option value="">All Difficulties</option>
+            <option value="Easy">Easy</option>
+            <option value="Medium">Medium</option>
+            <option value="Hard">Hard</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <select id="dietary-filter" class="form-select">
+            <option value="">All Diets</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <input id="ingredient-search" type="text" class="form-control" placeholder="Search dish or ingredient...">
+        </div>
+        <div class="col-md-2">
+          <button id="reset-filters" class="btn btn-secondary w-100">Reset</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recipe Cards -->
+    <div id="recipe-list" class="row"></div>
+    <div id="no-results" class="text-center" style="display: none;">
+      <h3>No recipes found.</h3>
+      <p>Try adjusting your filters or clearing your pantry.</p>
+    </div>
+  </div>
+
+  <!-- Recipe Detail Modal -->
+  <div class="modal fade" id="recipeModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 id="modal-title" class="modal-title"></h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body" id="modal-body"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer mt-auto py-3">
+    <div class="container text-center">
+      <span>Brought to you by the magic of movies.</span>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="recipes.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
+
